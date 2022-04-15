@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_15_060539) do
+ActiveRecord::Schema.define(version: 2022_04_15_063123) do
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
@@ -26,33 +26,17 @@ ActiveRecord::Schema.define(version: 2022_04_15_060539) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "person_representation_workshops", force: :cascade do |t|
-    t.string "representation_name"
-    t.string "representation_last_name"
-    t.string "representation_identification"
-    t.string "representation_birthday"
-    t.string "representation_telephone"
-    t.integer "city_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["city_id"], name: "index_person_representation_workshops_on_city_id"
-  end
-
-  create_table "workshops", force: :cascade do |t|
-    t.string "name"
+  create_table "person_workshops", force: :cascade do |t|
+    t.string "person_name"
+    t.string "person_last_name"
+    t.string "person_telephone"
+    t.string "person_identification"
     t.boolean "active"
     t.integer "city_id", null: false
-    t.integer "location_id", null: false
-    t.integer "person_representation_workshop_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["city_id"], name: "index_workshops_on_city_id"
-    t.index ["location_id"], name: "index_workshops_on_location_id"
-    t.index ["person_representation_workshop_id"], name: "index_workshops_on_person_representation_workshop_id"
+    t.index ["city_id"], name: "index_person_workshops_on_city_id"
   end
 
-  add_foreign_key "person_representation_workshops", "cities"
-  add_foreign_key "workshops", "cities"
-  add_foreign_key "workshops", "locations"
-  add_foreign_key "workshops", "person_representation_workshops"
+  add_foreign_key "person_workshops", "cities"
 end

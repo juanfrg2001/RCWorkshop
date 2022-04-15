@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Person Workshops</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Person name</th>
+      <th>Person last name</th>
+      <th>Person telephone</th>
+      <th>Person identification</th>
+      <th>Active</th>
+      <th>City</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @person_workshops.each do |person_workshop| %>
+      <tr>
+        <td><%= person_workshop.person_name %></td>
+        <td><%= person_workshop.person_last_name %></td>
+        <td><%= person_workshop.person_telephone %></td>
+        <td><%= person_workshop.person_identification %></td>
+        <td><%= person_workshop.active %></td>
+        <td><%= person_workshop.city_id %></td>
+        <td><%= link_to 'Show', person_workshop %></td>
+        <td><%= link_to 'Edit', edit_person_workshop_path(person_workshop) %></td>
+        <td><%= link_to 'Destroy', person_workshop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Person Workshop', new_person_workshop_path %>
