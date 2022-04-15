@@ -3,7 +3,13 @@
 one:
   name: MyString
   active: false
+  city: one
+  location: one
+  person_representation_workshop: 
 
 two:
   name: MyString
   active: false
+  city: two
+  location: two
+  person_representation_workshop: 
