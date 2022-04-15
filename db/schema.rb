@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_15_063123) do
+ActiveRecord::Schema.define(version: 2022_04_15_145315) do
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
@@ -38,5 +38,30 @@ ActiveRecord::Schema.define(version: 2022_04_15_063123) do
     t.index ["city_id"], name: "index_person_workshops_on_city_id"
   end
 
+  create_table "service_workshops", force: :cascade do |t|
+    t.string "name"
+    t.string "objective"
+    t.string "duration"
+    t.string "car_specialization"
+    t.integer "workshop_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["workshop_id"], name: "index_service_workshops_on_workshop_id"
+  end
+
+  create_table "workshops", force: :cascade do |t|
+    t.string "name"
+    t.boolean "active"
+    t.integer "city_id", null: false
+    t.integer "person_workshop_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["city_id"], name: "index_workshops_on_city_id"
+    t.index ["person_workshop_id"], name: "index_workshops_on_person_workshop_id"
+  end
+
   add_foreign_key "person_workshops", "cities"
+  add_foreign_key "service_workshops", "workshops"
+  add_foreign_key "workshops", "cities"
+  add_foreign_key "workshops", "person_workshops"
 end

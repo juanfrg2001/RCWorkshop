@@ -36,10 +36,17 @@
     <%= form.check_box :active %>
   </div>
 
+  <% @cities.each do |city_id| %>
+    <h1><% city_id %></h1>
+
+  <% end %> %>
   <div class="field">
     <%= form.label :city_id %>
-    <%= form.text_field :city_id %>
+
+    <%= form.select :city_id, options_for_select([["Bogota", 1], ["Student", 2]]) %>
   </div>
+
+
 
   <div class="actions">
     <%= form.submit %>

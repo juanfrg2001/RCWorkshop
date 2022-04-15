@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :service_workshops
   resources :person_workshops
   resources :locations
   resources :cities

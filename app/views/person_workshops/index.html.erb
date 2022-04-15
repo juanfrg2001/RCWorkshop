@@ -23,7 +23,7 @@
         <td><%= person_workshop.person_telephone %></td>
         <td><%= person_workshop.person_identification %></td>
         <td><%= person_workshop.active %></td>
-        <td><%= person_workshop.city_id %></td>
+        <td><%= person_workshop.city.name %></td>
         <td><%= link_to 'Show', person_workshop %></td>
         <td><%= link_to 'Edit', edit_person_workshop_path(person_workshop) %></td>
         <td><%= link_to 'Destroy', person_workshop, method: :delete, data: { confirm: 'Are you sure?' } %></td>

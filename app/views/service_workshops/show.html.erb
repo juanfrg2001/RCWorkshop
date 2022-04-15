@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @service_workshop.name %>
+</p>
+
+<p>
+  <strong>Objective:</strong>
+  <%= @service_workshop.objective %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @service_workshop.duration %>
+</p>
+
+<p>
+  <strong>Car specialization:</strong>
+  <%= @service_workshop.car_specialization %>
+</p>
+
+<p>
+  <strong>Workshop:</strong>
+  <%= @service_workshop.workshop_id %>
+</p>
+
+<%= link_to 'Edit', edit_service_workshop_path(@service_workshop) %> |
+<%= link_to 'Back', service_workshops_path %>
