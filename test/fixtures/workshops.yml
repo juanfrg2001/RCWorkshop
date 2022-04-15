@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  start_date: 2022-04-15 00:46:17
+  finish_date: 2022-04-15 00:46:17
+  active: false
+  city: one
+  location: one
+  person_representation_workshop: 
+
+two:
+  name: MyString
+  start_date: 2022-04-15 00:46:17
+  finish_date: 2022-04-15 00:46:17
+  active: false
+  city: two
+  location: two
+  person_representation_workshop: 

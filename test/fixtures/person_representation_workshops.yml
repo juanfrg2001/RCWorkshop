@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  representation_name: MyString
+  representation_last_name: MyString
+  representation_identification: MyString
+  representation_birthday: MyString
+  representation_telephone: MyString
+  city: one
+
+two:
+  representation_name: MyString
+  representation_last_name: MyString
+  representation_identification: MyString
+  representation_birthday: MyString
+  representation_telephone: MyString
+  city: two
