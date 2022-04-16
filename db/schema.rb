@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_15_145315) do
+ActiveRecord::Schema.define(version: 2022_04_16_181120) do
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
@@ -52,16 +52,21 @@ ActiveRecord::Schema.define(version: 2022_04_15_145315) do
   create_table "workshops", force: :cascade do |t|
     t.string "name"
     t.boolean "active"
+    t.boolean "priority"
     t.integer "city_id", null: false
+    t.integer "location_id", null: false
     t.integer "person_workshop_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image_url"
     t.index ["city_id"], name: "index_workshops_on_city_id"
+    t.index ["location_id"], name: "index_workshops_on_location_id"
     t.index ["person_workshop_id"], name: "index_workshops_on_person_workshop_id"
   end
 
   add_foreign_key "person_workshops", "cities"
   add_foreign_key "service_workshops", "workshops"
   add_foreign_key "workshops", "cities"
+  add_foreign_key "workshops", "locations"
   add_foreign_key "workshops", "person_workshops"
 end

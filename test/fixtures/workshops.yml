@@ -3,7 +3,15 @@
 one:
   name: MyString
   active: false
+  priority: false
+  city: one
+  location: one
+  person_workshop: one
 
 two:
   name: MyString
   active: false
+  priority: false
+  city: two
+  location: two
+  person_workshop: two
